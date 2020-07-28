@@ -32,16 +32,28 @@ function saveRecord(entry){
     store.add(entry);
 }
 
-async function sendToServer(entries){}
+async function sendToServer(entries){
+    return fetch("/api/transaction/bulk", {
+        method: 'POST',
+        body: JSON.stringify(entries),
+        headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json"
+          }
+    }).then(res => res.json())
+    
+}
 
-async function syncWithRemote(){
+function syncWithRemote(){
+    console.log('trying to sync');
     // read store
     const store = accessStore();
     const allEntries = store.getAll();
-    allEntries.onsuccess = function(){
-        if(allEntries.results.length>0){
+    allEntries.onsuccess = async function(){
+        if(allEntries.result.length>0){
             try{
                 let received = await sendToServer(allEntries.result);
+                store.clear();
             } catch(e){
                 console.log('Failed to synchronize with remote')
             }
@@ -50,6 +62,5 @@ async function syncWithRemote(){
         }
 
     }
-    // if not empty -> send to remote
-    // clear store
+    
 }
