@@ -12,7 +12,7 @@ Using the BUDGETTRACKER app is easy and simple. As soon as you open the app, you
 
 To access The BUDGETTRACKER [CLICK HERE] https://github.com/binjim2002/progressive-budget
 
-My heroku repo is: https://cryptic-cove-74888.herokuapp.com/
+My heroku repo is: https://cryptic-meadow-01312.herokuapp.com/
 
 # Credits
 This app was designed and built by Jimmy B. Kazadi
