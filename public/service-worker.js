@@ -1,7 +1,10 @@
 const FILES_TO_CACHE = [
+    "/assets/chart.js",
+    "/assets/css/font-awesome.css",
+    "/assets/fonts/fontawesome-webfont.woff2",
     "/",
     "/index.html",
-    "indexdb.js",
+    "db.js",
     // "favicon.ico",
     "index.js",
     "manifest.webmanifest",
